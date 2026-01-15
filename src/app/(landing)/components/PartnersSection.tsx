@@ -14,7 +14,7 @@ export function PartnersSection() {
                     <div className="flex items-center justify-center gap-4 mb-4">
                         <div className="h-px w-12 bg-white/10" />
                         <h3 className="text-[10px] font-bold uppercase tracking-[0.4em] text-foreground/40">
-                            Ecosystem Partners
+                            Trusted by Solana's Top Projects
                         </h3>
                         <div className="h-px w-12 bg-white/10" />
                     </div>

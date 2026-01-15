@@ -9,6 +9,9 @@ import { TweetsSection } from './components/TweetsSection'
 import { FAQSection } from './components/FAQSection'
 import { JoinCTASection } from './components/JoinCTASection'
 import { Footer } from './components/Footer'
+import { ValuePropSection } from './components/ValuePropSection'
+import { MemberPerksSection } from './components/MemberPerksSection'
+import { ResourcesSection } from './components/ResourcesSection'
 
 export default function LandingPage() {
   return (
@@ -16,10 +19,13 @@ export default function LandingPage() {
       <Navbar />
       <HeroSection />
       <PartnersSection />
+      <ValuePropSection />
       <MissionSection />
       <StatsSection />
+      <MemberPerksSection />
       <EventsSection />
       <MembersPreview />
+      <ResourcesSection />
       <TweetsSection />
       <FAQSection />
       <JoinCTASection />
