@@ -134,18 +134,24 @@ export function HeroSection() {
                 <div className="grid grid-cols-2 gap-4 relative z-10 p-2">
                   {/* Card 1: Total Transactions (Red Gradient) */}
                   <motion.div
-                    whileHover={{ y: -10, scale: 1.05 }}
-                    initial={{ rotate: -3, y: 0 }}
-                    className="p-5 rounded-[1.5rem] gradient-card-red glow-red text-white flex flex-col justify-between aspect-[4/3] shadow-2xl relative overflow-hidden group border border-white/20"
+                    whileHover={{ y: -15, scale: 1.08, rotateX: 5 }}
+                    initial={{ rotate: -3 }}
+                    animate={{ y: [0, -8, 0] }}
+                    transition={{ y: { duration: 3, repeat: Infinity, ease: 'easeInOut' } }}
+                    style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
+                    className="p-5 rounded-[1.5rem] gradient-card-red text-white flex flex-col justify-between aspect-[4/3] relative overflow-hidden group border-2 border-white/40 shadow-[0_8px_30px_rgba(0,0,0,0.8)]"
                   >
-                    <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:scale-125 transition-transform">
+                    {/* Glossy overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-white/25 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/20 pointer-events-none" />
+                    <div className="absolute top-0 right-0 p-4 opacity-30 group-hover:scale-125 transition-transform">
                       <Zap size={32} />
                     </div>
-                    <div>
-                      <div className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-60 mb-1">Total Transactions</div>
-                      <div className="text-2xl sm:text-3xl font-display font-bold">19,635M</div>
+                    <div className="relative z-10">
+                      <div className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-70 mb-1 drop-shadow-sm">Total Transactions</div>
+                      <div className="text-2xl sm:text-3xl font-display font-bold drop-shadow-lg">19,635M</div>
                     </div>
-                    <div className="h-1 w-full bg-white/20 rounded-full overflow-hidden">
+                    <div className="h-1.5 w-full bg-black/30 rounded-full overflow-hidden relative z-10">
                       <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: "85%" }}
@@ -156,54 +162,72 @@ export function HeroSection() {
 
                   {/* Card 2: Block Time (Blue Gradient) */}
                   <motion.div
-                    whileHover={{ y: -10, scale: 1.05 }}
-                    initial={{ rotate: 3, y: 0 }}
-                    className="p-5 rounded-[1.5rem] gradient-card-blue glow-blue text-white flex flex-col justify-between aspect-[4/3] shadow-2xl relative overflow-hidden group border border-white/20"
+                    whileHover={{ y: -15, scale: 1.08, rotateX: 5 }}
+                    initial={{ rotate: 3 }}
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ y: { duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 } }}
+                    style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
+                    className="p-5 rounded-[1.5rem] gradient-card-blue text-white flex flex-col justify-between aspect-[4/3] relative overflow-hidden group border-2 border-white/40 shadow-[0_8px_30px_rgba(0,0,0,0.8)]"
                   >
-                    <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:scale-125 transition-transform">
+                    {/* Glossy overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-white/25 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/20 pointer-events-none" />
+                    <div className="absolute top-0 right-0 p-4 opacity-30 group-hover:scale-125 transition-transform">
                       <Zap size={32} />
                     </div>
-                    <div>
-                      <div className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-60 mb-1">Block Time</div>
-                      <div className="text-2xl sm:text-3xl font-display font-bold">2824ms</div>
+                    <div className="relative z-10">
+                      <div className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-70 mb-1 drop-shadow-sm">Block Time</div>
+                      <div className="text-2xl sm:text-3xl font-display font-bold drop-shadow-lg">2824ms</div>
                     </div>
-                    <div className="flex gap-1">
+                    <div className="flex gap-1 relative z-10">
                       {[1, 2, 3, 4, 5].map(i => (
-                        <div key={i} className={`h-1 flex-1 rounded-full ${i <= 4 ? 'bg-white' : 'bg-white/20'}`} />
+                        <div key={i} className={`h-1.5 flex-1 rounded-full ${i <= 4 ? 'bg-white' : 'bg-black/30'}`} />
                       ))}
                     </div>
                   </motion.div>
 
                   {/* Card 3: Nodes (Purple Gradient) */}
                   <motion.div
-                    whileHover={{ y: -10, scale: 1.05 }}
-                    initial={{ rotate: 2, y: 0 }}
-                    className="p-5 rounded-[1.5rem] gradient-card-purple glow-purple text-white flex flex-col justify-between aspect-[4/3] shadow-2xl relative overflow-hidden group border border-white/20"
+                    whileHover={{ y: -15, scale: 1.08, rotateX: 5 }}
+                    initial={{ rotate: 2 }}
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{ y: { duration: 2.8, repeat: Infinity, ease: 'easeInOut', delay: 1 } }}
+                    style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
+                    className="p-5 rounded-[1.5rem] gradient-card-purple text-white flex flex-col justify-between aspect-[4/3] relative overflow-hidden group border-2 border-white/40 shadow-[0_8px_30px_rgba(0,0,0,0.8)]"
                   >
-                    <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:scale-125 transition-transform">
+                    {/* Glossy overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-white/25 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/20 pointer-events-none" />
+                    <div className="absolute top-0 right-0 p-4 opacity-30 group-hover:scale-125 transition-transform">
                       <Users size={32} />
                     </div>
-                    <div>
-                      <div className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-60 mb-1">Nodes</div>
-                      <div className="text-2xl sm:text-3xl font-display font-bold">1,026</div>
+                    <div className="relative z-10">
+                      <div className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-70 mb-1 drop-shadow-sm">Nodes</div>
+                      <div className="text-2xl sm:text-3xl font-display font-bold drop-shadow-lg">1,026</div>
                     </div>
-                    <div className="text-[10px] font-bold opacity-60 uppercase tracking-widest">Active Validators</div>
+                    <div className="text-[10px] font-bold opacity-70 uppercase tracking-widest relative z-10 drop-shadow-sm">Active Validators</div>
                   </motion.div>
 
                   {/* Card 4: Avg Fee (Cyan/Blue Gradient) */}
                   <motion.div
-                    whileHover={{ y: -10, scale: 1.05 }}
-                    initial={{ rotate: -2, y: 0 }}
-                    className="p-5 rounded-[1.5rem] bg-gradient-to-br from-cyan-400 to-blue-600 shadow-2xl text-white flex flex-col justify-between aspect-[4/3] relative overflow-hidden group border border-white/20"
+                    whileHover={{ y: -15, scale: 1.08, rotateX: 5 }}
+                    initial={{ rotate: -2 }}
+                    animate={{ y: [0, -12, 0] }}
+                    transition={{ y: { duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1.5 } }}
+                    style={{ transformStyle: 'preserve-3d', perspective: 1000 }}
+                    className="p-5 rounded-[1.5rem] bg-gradient-to-br from-cyan-400 to-blue-600 text-white flex flex-col justify-between aspect-[4/3] relative overflow-hidden group border-2 border-white/40 shadow-[0_8px_30px_rgba(0,0,0,0.8)]"
                   >
-                    <div className="absolute top-0 right-0 p-4 opacity-20 group-hover:scale-125 transition-transform">
+                    {/* Glossy overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-white/25 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-white/20 pointer-events-none" />
+                    <div className="absolute top-0 right-0 p-4 opacity-30 group-hover:scale-125 transition-transform">
                       <Globe size={32} />
                     </div>
-                    <div>
-                      <div className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-60 mb-1">Avg Fee</div>
-                      <div className="text-2xl sm:text-3xl font-display font-bold">$0.00025</div>
+                    <div className="relative z-10">
+                      <div className="text-[10px] font-bold uppercase tracking-[0.2em] opacity-70 mb-1 drop-shadow-sm">Avg Fee</div>
+                      <div className="text-2xl sm:text-3xl font-display font-bold drop-shadow-lg">$0.00025</div>
                     </div>
-                    <div className="px-2 py-0.5 rounded-full bg-white/20 text-[8px] font-bold uppercase tracking-widest w-fit">Lowest in Web3</div>
+                    <div className="px-2 py-0.5 rounded-full bg-white/30 text-[8px] font-bold uppercase tracking-widest w-fit relative z-10">Lowest in Web3</div>
                   </motion.div>
                 </div>
 
